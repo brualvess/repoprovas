@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { authUser } from './middlewares/authUser.js';
 import "express-async-errors";
 import {
     signup,
@@ -9,10 +10,15 @@ import {
     schemaSignup,
     schemaSignin
 } from './schemas/usersSchema.js';
+import { schemaTests } from './schemas/testsSchema.js';
+import { createTests } from './controllers/testsControllers.js';
 
 const router = Router()
 
+//routes users
 router.post('/signup',joiValidation(schemaSignup), signup)
 router.post('/signin',joiValidation(schemaSignin), signin)
+//routes tests
+router.post('/test', authUser, joiValidation(schemaTests),createTests )
 
 export default router
