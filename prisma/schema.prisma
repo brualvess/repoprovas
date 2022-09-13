@@ -28,7 +28,7 @@ model disciplines {
   term   terms  @relation(fields: [termId], references: [id])
   termId Int
 
-  teacherDisciplines teacherDisciplines[]
+  teacherDisciplines teachersDisciplines[]
 }
 
 model terms {
@@ -40,10 +40,10 @@ model terms {
 model teachers {
   id                 Int                  @id @default(autoincrement())
   name               String               @unique
-  teacherDisciplines teacherDisciplines[]
+  teacherDisciplines teachersDisciplines[]
 }
 
-model teacherDisciplines {
+model teachersDisciplines {
   id           Int         @id @default(autoincrement())
   teacher      teachers    @relation(fields: [teacherId], references: [id])
   teacherId    Int
@@ -58,6 +58,6 @@ model tests {
   pdfUrl              String
   category            categories         @relation(fields: [categoryId], references: [id])
   categoryId          Int
-  teacherDiscipline   teacherDisciplines @relation(fields: [teacherDisciplineId], references: [id])
+  teacherDiscipline   teachersDisciplines @relation(fields: [teacherDisciplineId], references: [id])
   teacherDisciplineId Int
 }
