@@ -1,7 +1,8 @@
 import { ITests } from "../types/testsTypes.js";
 import { create } from "../repositories/testsRepository.js";
 import { findById } from "../repositories/categoriesRepository.js";
-import { findById as getById } from "../repositories/teacherDisciplineRepository.js";
+import { findById as getById, }from "../repositories/teacherDisciplineRepository.js";
+import { findAll } from "../repositories/termsRepository.js";
 
 export async function createTests(datas: ITests){
     const category = await findById(datas.categoryId)
@@ -13,4 +14,8 @@ export async function createTests(datas: ITests){
         throw{type:'not_found'}
     }
 await create(datas);
+}
+export async function getByDisciplines(){
+const response = await findAll()
+return response
 }

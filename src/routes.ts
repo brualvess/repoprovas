@@ -11,14 +11,17 @@ import {
     schemaSignin
 } from './schemas/usersSchema.js';
 import { schemaTests } from './schemas/testsSchema.js';
-import { createTests } from './controllers/testsControllers.js';
+import {
+    createTests,
+    getTestsDiscipline
+} from './controllers/testsControllers.js';
 
 const router = Router()
 
 //routes users
-router.post('/signup',joiValidation(schemaSignup), signup)
-router.post('/signin',joiValidation(schemaSignin), signin)
+router.post('/signup', joiValidation(schemaSignup), signup)
+router.post('/signin', joiValidation(schemaSignin), signin)
 //routes tests
-router.post('/test', authUser, joiValidation(schemaTests),createTests )
-
+router.post('/test', authUser, joiValidation(schemaTests), createTests)
+router.get('/test', authUser, getTestsDiscipline)
 export default router
