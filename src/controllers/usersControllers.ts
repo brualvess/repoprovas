@@ -1,9 +1,9 @@
 import { Request, Response } from "express"
-import { IUsers } from "../types/usersTypes.js"
+import { IUsers } from "../types/usersTypes"
 import {
     createUser,
     loginUser
-} from "../service/usersService.js"
+} from "../service/usersService"
 
 
 export async function signup(req: Request, res: Response) {

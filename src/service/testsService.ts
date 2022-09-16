@@ -1,10 +1,10 @@
-import { ITests } from "../types/testsTypes.js";
-import { create } from "../repositories/testsRepository.js";
-import { findById } from "../repositories/categoriesRepository.js";
-import { findById as getById, } from "../repositories/teacherDisciplineRepository.js";
-import { findAll } from "../repositories/termsRepository.js";
-import { findAll as findTeacher } from "../repositories/teacherRepository.js";
-import { findAll as categories } from "../repositories/categoriesRepository.js";
+import { ITests } from "../types/testsTypes";
+import { create } from "../repositories/testsRepository";
+import { findById } from "../repositories/categoriesRepository";
+import { findById as getById, } from "../repositories/teacherDisciplineRepository";
+import { findAll } from "../repositories/termsRepository";
+import { findAll as findTeacher } from "../repositories/teacherRepository";
+import { findAll as categories } from "../repositories/categoriesRepository";
 export async function createTests(datas: ITests) {
     const category = await findById(datas.categoryId)
     const teacherDiscipline = await getById(datas.teacherDisciplineId)

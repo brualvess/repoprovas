@@ -1,4 +1,4 @@
-import { prisma } from '../database.js';
+import { prisma } from '../database';
 
 export async function findById(id: number){
     const result = await prisma.categories.findUnique({where:{id}})

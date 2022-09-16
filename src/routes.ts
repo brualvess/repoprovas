@@ -1,21 +1,21 @@
 import { Router } from 'express';
-import { authUser } from './middlewares/authUser.js';
+import { authUser } from './middlewares/authUser';
 import "express-async-errors";
 import {
     signup,
     signin
-} from './controllers/usersControllers.js';
-import joiValidation from './middlewares/joiValidation.js';
+} from './controllers/usersControllers';
+import joiValidation from './middlewares/joiValidation';
 import {
     schemaSignup,
     schemaSignin
-} from './schemas/usersSchema.js';
-import { schemaTests } from './schemas/testsSchema.js';
+} from './schemas/usersSchema';
+import { schemaTests } from './schemas/testsSchema';
 import {
     createTests,
     getTestsDiscipline,
     getTestTeacher
-} from './controllers/testsControllers.js';
+} from './controllers/testsControllers';
 
 const router = Router()
 

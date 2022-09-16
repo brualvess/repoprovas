@@ -1,5 +1,5 @@
 import { IUsers } from "../types/usersTypes";
-import { prisma } from '../database.js';
+import { prisma } from '../database';
 
 export async function findByEmail(email: string){
     const result = await prisma.users.findMany({where:{email}})

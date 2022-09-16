@@ -1,10 +1,10 @@
 import { Request, Response } from "express"
-import { ITests } from "../types/testsTypes.js"
-import { createTests as create } from "../service/testsService.js"
+import { ITests } from "../types/testsTypes"
+import { createTests as create } from "../service/testsService"
 import {
     getByDisciplines,
     getTestTeacher as testTeach
-} from "../service/testsService.js"
+} from "../service/testsService"
 
 export async function createTests(req: Request, res: Response) {
     const datas: ITests = req.body

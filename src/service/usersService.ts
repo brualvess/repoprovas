@@ -1,9 +1,9 @@
-import { IUsers } from "../types/usersTypes.js";
+import { IUsers } from "../types/usersTypes";
 import bcrypt from 'bcrypt';
 import {
     create,
     findByEmail
-} from "../repositories/usersRepository.js";
+} from "../repositories/usersRepository";
 import jwt from 'jsonwebtoken'
 
 export async function createUser(datas: Omit<IUsers, "id">) {
