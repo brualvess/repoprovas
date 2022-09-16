@@ -13,7 +13,8 @@ import {
 import { schemaTests } from './schemas/testsSchema.js';
 import {
     createTests,
-    getTestsDiscipline
+    getTestsDiscipline,
+    getTestTeacher
 } from './controllers/testsControllers.js';
 
 const router = Router()
@@ -23,5 +24,6 @@ router.post('/signup', joiValidation(schemaSignup), signup)
 router.post('/signin', joiValidation(schemaSignin), signin)
 //routes tests
 router.post('/test', authUser, joiValidation(schemaTests), createTests)
-router.get('/test', authUser, getTestsDiscipline)
+router.get('/testDiscipline', authUser, getTestsDiscipline)
+router.get('/testTeacher', authUser, getTestTeacher)
 export default router
