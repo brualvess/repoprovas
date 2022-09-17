@@ -5,8 +5,11 @@
 
   "main": "index.js",
   "scripts": {
-    "test": "dotenv -e .env.test jest",
+    "test": "dotenv -e .env.test prisma migrate dev && prisma db seed && jest",
     "dev": "nodemon ./src/server.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
