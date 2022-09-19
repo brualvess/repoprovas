@@ -1,5 +1,5 @@
 # Repoprovas
-O repoprovas é um sistema de compartilhamento de provas entre estudantes!
+O repoprovas é um sistema de compartilhamento de provas entre estudantes! Para acessar a API use esse [link](https://proj-repoprovas.herokuapp.com).
 
 
 ## Rotas
