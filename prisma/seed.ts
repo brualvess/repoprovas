@@ -1,40 +1,49 @@
 import { prisma } from '../src/database';
 async function main() {
-    const datasCategory = {
+    const dataCategory = {
         name: 'Projeto'
     }
-    const datasTeacher = {
+    const dataTeacher = {
         name: 'Bruna Hamori'
     }
-    const datasTerms = {
+    const dataTeacher2 = {
+        name: 'Caio Freitas'
+    }
+    const dataTerms = {
         number: 2
     }
-    const datasDisciplines = {
+    const dataDisciplines = {
         name: 'JavaSCript',
         termId: 1
     }
 
+   
     await prisma.categories.upsert({
-        where: { name: datasCategory.name },
+        where: { name: dataCategory.name },
         update: {},
-        create: datasCategory
+        create: dataCategory
     })
     await prisma.teachers.upsert({
-        where: { name: datasTeacher.name },
+        where: { name: dataTeacher.name },
         update: {},
-        create: datasTeacher
+        create: dataTeacher
+    })
+    await prisma.teachers.upsert({
+        where: { name: dataTeacher2.name },
+        update: {},
+        create: dataTeacher2
     })
     await prisma.terms.upsert({
-        where: { number: datasTerms.number },
+        where: { number: dataTerms.number },
         update: {},
-        create: datasTerms
+        create: dataTerms
     })
     await prisma.disciplines.upsert({
-        where: { name: datasDisciplines.name },
+        where: { name: dataDisciplines.name },
         update: {},
-        create: datasDisciplines
+        create: dataDisciplines
     })
-
+   
 }
 main().catch(e => {
     console.log(e)
