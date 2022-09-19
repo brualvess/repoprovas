@@ -51,6 +51,7 @@ Nessa rota, estudantes novos poderam criar seu cadastro e fazer login.
 * Headers
 
 ``` x-api-key :[access_token] ``` 
+
 **Buscar todas as provas por instrutor( /testTeacher ) [GET]**
 
 
