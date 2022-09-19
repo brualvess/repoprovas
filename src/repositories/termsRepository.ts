@@ -13,7 +13,23 @@ export async function findAll() {
                                     name: true
                                 }
                             },
-                            tests: true
+                            tests:{
+                               distinct: ['categoryId'],
+                               select:{
+                                category:{
+                                    select:{
+                                        name: true,
+                                        tests:{
+                                            select:{
+                                                name: true,
+                                                pdfUrl: true,
+                                                teacherDisciplineId: true
+                                            }
+                                        }
+                                    }
+                                }
+                               }
+                            }
 
                         }
                     }
