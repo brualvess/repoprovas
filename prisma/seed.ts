@@ -16,6 +16,10 @@ async function main() {
         name: 'JavaSCript',
         termId: 1
     }
+    const teacherDiscipline ={
+        teacherId: 1,
+        disciplineId: 1
+    }
 
    
     await prisma.categories.upsert({
@@ -42,6 +46,11 @@ async function main() {
         where: { name: dataDisciplines.name },
         update: {},
         create: dataDisciplines
+    })
+    await prisma.teachersDisciplines.upsert({
+        where: {id: 1},
+        update: {},
+        create: teacherDiscipline
     })
    
 }
